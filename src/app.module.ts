@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 require('dotenv').config();
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
@@ -12,10 +13,12 @@ const { MONGO_DATABASE, MONGO_USERNAME, MONGO_PASSWORD } = process.env;
 @Module({
   imports: [
     ConfigModule.forRoot({
-      envFilePath: '.env'
+      envFilePath: '.env',
     }),
-    MongooseModule.forRoot(`mongodb+srv://${MONGO_USERNAME}:${MONGO_PASSWORD}@easybuyercluster.kk3hhta.mongodb.net/${MONGO_DATABASE}?retryWrites=true&w=majority`),
-    ShopProductModule
+    MongooseModule.forRoot(
+      `mongodb+srv://${MONGO_USERNAME}:${MONGO_PASSWORD}@easybuyercluster.kk3hhta.mongodb.net/${MONGO_DATABASE}?retryWrites=true&w=majority`,
+    ),
+    ShopProductModule,
   ],
   controllers: [AppController],
   providers: [AppService],
