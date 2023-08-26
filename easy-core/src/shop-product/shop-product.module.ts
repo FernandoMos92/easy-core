@@ -7,11 +7,14 @@ import { ShopProductService } from './shop-product.service';
 
 @Module({
   imports: [
-    MongooseModule.forFeature([{
-      name: 'ShopProduct', schema: ShopProductSchema,
-    }]),
+    MongooseModule.forFeature([
+      {
+        name: 'ShopProduct',
+        schema: ShopProductSchema,
+      },
+    ]),
   ],
   providers: [ShopProductService],
-  controllers: [ShopProductController]
+  controllers: [ShopProductController],
 })
 export class ShopProductModule {}

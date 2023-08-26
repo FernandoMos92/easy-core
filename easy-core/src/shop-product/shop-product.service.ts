@@ -7,9 +7,9 @@ import { ShopProduct } from './shop-product.model/shop-product.model';
 @Injectable()
 export class ShopProductService {
   constructor(
-    @InjectModel('ShopProduct') private readonly shopProductModel: Model<ShopProduct>,
-  ) {
-  }
+    @InjectModel('ShopProduct')
+    private readonly shopProductModel: Model<ShopProduct>,
+  ) {}
 
   async create(doc: ShopProduct) {
     const result = await new this.shopProductModel(doc).save();

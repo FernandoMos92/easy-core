@@ -1,12 +1,19 @@
-import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Post,
+  Put,
+} from '@nestjs/common';
 
 import { ShopProduct } from './shop-product.model/shop-product.model';
 import { ShopProductService } from './shop-product.service';
 
 @Controller('shop-product')
 export class ShopProductController {
-  constructor(private service: ShopProductService) {
-  }
+  constructor(private service: ShopProductService) {}
 
   @Get('findById/:id')
   get(@Param() params) {

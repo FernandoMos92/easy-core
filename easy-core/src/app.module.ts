@@ -16,7 +16,7 @@ const { MONGO_DATABASE, MONGO_USERNAME, MONGO_PASSWORD } = process.env;
       envFilePath: '.env',
     }),
     MongooseModule.forRoot(
-      `mongodb+srv://${MONGO_USERNAME}:${MONGO_PASSWORD}@easybuyercluster.kk3hhta.mongodb.net/${MONGO_DATABASE}?retryWrites=true&w=majority`,
+      `mongodb+srv://${MONGO_USERNAME}:${MONGO_PASSWORD}@${MONGO_DATABASE}.kk3hhta.mongodb.net/?retryWrites=true&w=majority`,
     ),
     ShopProductModule,
   ],
