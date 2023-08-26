@@ -17,7 +17,13 @@ export class ShopProductService {
   }
 
   async findById(id: number) {
-    // ...
+    const result = await this.shopProductModel.findById(id);
+    return result;
+  }
+
+  async findAll() {
+    const result = await this.shopProductModel.find();
+    return result;
   }
 
   async update(ShopProduct: ShopProduct) {

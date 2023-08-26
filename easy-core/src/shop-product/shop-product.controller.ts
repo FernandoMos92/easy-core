@@ -20,6 +20,11 @@ export class ShopProductController {
     return this.service.findById(params.id);
   }
 
+  @Get('find')
+  getAll() {
+    return this.service.findAll();
+  }
+
   @Post('create')
   create(@Body() user: ShopProduct) {
     return this.service.create(user);
