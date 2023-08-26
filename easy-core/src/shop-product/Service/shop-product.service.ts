@@ -15,7 +15,7 @@ export class ShopProductService {
     return result.id;
   }
 
-  async findById(id: number) {
+  async findById(id: string) {
     const result = await this.shopProductModel.findById(id);
     return result;
   }
@@ -29,7 +29,8 @@ export class ShopProductService {
     // ...
   }
 
-  async remove(ShopProduct: ShopProduct) {
-    // ...
+  async remove(id: string) {
+    const result = this.shopProductModel.findByIdAndDelete(id);
+    return result;
   }
 }
