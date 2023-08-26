@@ -3,8 +3,8 @@ require('dotenv').config();
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { AppController } from './shop-product/Controller/app.controller';
+import { AppService } from './shop-product/Service/app.service';
 import { ShopProductModule } from './shop-product/shop-product.module';
 import { ConfigModule } from '@nestjs/config';
 

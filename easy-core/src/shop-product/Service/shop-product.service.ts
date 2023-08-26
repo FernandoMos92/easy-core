@@ -1,8 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-
-import { ShopProduct } from './shop-product.model/shop-product.model';
+import { ShopProduct } from '../Model/shop-product.model';
 
 @Injectable()
 export class ShopProductService {
