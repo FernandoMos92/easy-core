@@ -1,5 +1,5 @@
-import { Button, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 export class Home extends Component {
     render() {
@@ -10,10 +10,6 @@ const userOptions = [
 ];
     return (
     <View style={styles.container}>
-        <Image 
-            style={styles.image}
-            source={require('./../../assets/small-logo.png')}
-        />
         <View style={styles.cardMenu}>
             {userOptions.map(option => (
                 <TouchableOpacity key={option.label} style={styles.card}>
@@ -21,11 +17,10 @@ const userOptions = [
                     <Text style={styles.textCard}>{option.label}</Text>
                 </TouchableOpacity>
             ))}
-
         </View>
     </View>
     )
-  }
+}
 }
 
 const styles = StyleSheet.create({
@@ -46,29 +41,34 @@ const styles = StyleSheet.create({
     cardMenu: {
         padding:10,
         display: 'flex',
-        justifyContent: 'flex-start',
-        flexDirection: 'row',
-        flexWrap: 'wrap',
+        justifyContent: 'center',
+        alignItems: 'center',
         width:'100%',
         height: '60%',
-        gap:20
+        gap:20,
     },
     card: {
-        width:182,
-        height:150,
-        gap: 4
+        flexDirection: 'row',
+        alignItems: 'center',
+        width: 220,
+        height:70,
+        gap: 4,
+        borderRadius: 50,
+        padding: 5,
+        backgroundColor: '#ffe89c',
     },
     imageCard: {
-        width: 180, 
-        height: 100, 
-        borderRadius: 5,
+        width: 60, 
+        height: 60, 
+        borderRadius: 100,
     },
     textCard: {
         color: '#8c82fc',
         textAlign: 'center',
         textTransform: 'uppercase',
         fontWeight: 'bold',
+        
     }
-  });
+});
 
 export default Home
